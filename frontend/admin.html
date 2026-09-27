@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin — Ad DSS</title>
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+  <h1>Ad Management</h1>
+  <button id="demo-btn" style="margin-bottom:20px;padding:10px 18px;background:#16a34a;color:#fff;border:none;border-radius:4px;cursor:pointer;">
+    ⚡ Generate Demo Ads (overlap in ~1-4 min)
+  </button>
+  <section class="form-section">
+    <h2>Add New Advertisement</h2>
+    <form id="ad-form">
+      <label>Name<input type="text" id="f-name" required></label>
+      <label>Media File<input type="file" id="f-file" accept="image/*,video/mp4" required></label>
+      <label>Start Time<input type="datetime-local" id="f-start" required></label>
+      <label>End Time<input type="datetime-local" id="f-end" required></label>
+      <label>Priority<input type="number" id="f-priority" value="0"></label>
+      <label>Status
+        <select id="f-status">
+          <option value="active">Active</option>
+          <option value="inactive">Inactive</option>
+        </select>
+      </label>
+      <button type="submit">Add Advertisement</button>
+    </form>
+    <div id="form-message"></div>
+  </section>
+
+  <section>
+    <h2>All Advertisements</h2>
+    <table id="ads-table">
+      <thead>
+        <tr>
+          <th>ID</th><th>Name</th><th>Type</th><th>Start</th><th>End</th>
+          <th>Status</th><th>Priority</th><th>Current State</th><th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="ads-tbody"></tbody>
+    </table>
+  </section>
+
+  <script src="js/api.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

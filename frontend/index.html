@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ad Display — DSS</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="player-container" id="player-container">
+    <div class="fallback">Loading...</div>
+  </div>
+  <div class="timeline-wrapper">
+    <div class="timeline-track" id="timeline-track"></div>
+  </div>
+
+  <div class="info-panel">
+    <div><span>Current Ad:</span><span id="info-name">—</span></div>
+    <div><span>Media Type:</span><span id="info-type">—</span></div>
+    <div><span>Playback Status:</span><span id="info-status">—</span></div>
+    <div><span>Next Switch:</span><span id="info-next-switch">—</span></div>
+    <div><span>Rotation:</span><span id="info-rotation">—</span></div>
+    <div><span>Preload Status:</span><span id="info-preload">—</span></div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/preloader.js"></script>
+  <script src="js/timeline.js"></script>
+  <script src="js/player.js"></script>
+</body>
+</html>
