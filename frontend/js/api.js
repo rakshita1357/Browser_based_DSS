@@ -1,4 +1,4 @@
-const API_BASE = 'http://localhost:3000';
+const API_BASE = window.location.protocol === 'file:' ? 'http://localhost:3000' : '';
 
 async function fetchCurrentSchedule() {
   const res = await fetch(`${API_BASE}/api/schedule/current`);

@@ -1,0 +1,10 @@
+node_modules
+npm-debug.log*
+.env
+.git
+.gitignore
+.idea
+media
+README.md
+database
+frontend/*.html~
