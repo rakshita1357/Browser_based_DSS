@@ -8,6 +8,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use('/media', express.static(require('path').join(__dirname, '..', 'media')));
+app.use(express.static(require('path').join(__dirname, '..', 'frontend')));
 app.use('/api/ads', adsRoutes);
 app.use('/api/schedule', scheduleRoutes);
 app.get('/api/health', async (req, res) => {

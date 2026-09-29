@@ -83,6 +83,33 @@ if you're using an IDE like PyCharm.
 3. It'll appear in the table below and automatically show up in the player
    once its scheduled time arrives.
 
+## Deploying on Render with AWS RDS
+
+This repository includes a `Dockerfile` and `render.yaml` for deploying the
+Node.js/Express app as a Render web service. In Render, create a Blueprint
+from this repository, or create a Docker web service using the repository
+root as its Docker build context.
+
+Set these environment variables in the Render service:
+
+```
+DB_HOST=myapp-db.chks4qwiiptd.ap-south-1.rds.amazonaws.com
+DB_PORT=3306
+DB_NAME=ad_dss
+DB_USER=your_rds_username
+DB_PASSWORD=your_rds_password
+```
+
+`DB_USER` and `DB_PASSWORD` must be added as Render secrets; do not commit
+them to Git. The RDS security group must allow inbound MySQL traffic on port
+3306 from Render. Run `database/schema.sql` against the RDS instance before
+using the application, and run `database/seed.sql` only if sample data is
+needed.
+
+Render's local filesystem is ephemeral. Uploaded media can be lost after a
+redeploy or restart, so use a Render persistent disk for the `media` path or
+move uploads to object storage before relying on the service in production.
+
 ## Testing it quickly without waiting for real scheduled times
 
 Click the **"Generate Demo Ads"** button on the admin page — it creates two
