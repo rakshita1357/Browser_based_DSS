@@ -19,3 +19,8 @@ async function fetchAllAds() {
   if (!res.ok) throw new Error('Failed to fetch ads');
   return res.json();
 }
+async function fetchZonedSchedule() {
+  const res = await fetch(`${API_BASE}/api/schedule/zones`);
+  if (!res.ok) throw new Error('Failed to fetch zoned schedule');
+  return res.json();
+}
