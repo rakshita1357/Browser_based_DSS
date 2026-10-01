@@ -6,20 +6,24 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="player-container" id="player-container">
-    <div class="fallback">Loading...</div>
-  </div>
-  <div class="timeline-wrapper">
-    <div class="timeline-track" id="timeline-track"></div>
+
+    <div class="zone-grid">
+    <div class="zone zone-half">
+      <div class="zone-content" id="zone-gif-content"><div class="fallback">Loading...</div></div>
+      <div class="zone-label" id="zone-gif-label">GIF ZONE</div>
+    </div>
+    <div class="zone zone-quarter zone-top-right">
+      <div class="zone-content" id="zone-image-content"><div class="fallback">Loading...</div></div>
+      <div class="zone-label" id="zone-image-label">IMAGE ZONE</div>
+    </div>
+    <div class="zone zone-quarter zone-bottom-right">
+      <div class="zone-content" id="zone-video-content"><div class="fallback">Loading...</div></div>
+      <div class="zone-label" id="zone-video-label">VIDEO ZONE</div>
+    </div>
   </div>
 
-  <div class="info-panel">
-    <div><span>Current Ad:</span><span id="info-name">—</span></div>
-    <div><span>Media Type:</span><span id="info-type">—</span></div>
-    <div><span>Playback Status:</span><span id="info-status">—</span></div>
-    <div><span>Next Switch:</span><span id="info-next-switch">—</span></div>
-    <div><span>Rotation:</span><span id="info-rotation">—</span></div>
-    <div><span>Preload Status:</span><span id="info-preload">—</span></div>
+  <div class="timeline-wrapper">
+    <div class="timeline-track" id="timeline-track"></div>
   </div>
 
   <script src="js/api.js"></script>
